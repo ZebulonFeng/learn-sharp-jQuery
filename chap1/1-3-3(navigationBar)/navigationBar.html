@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <link type="text/css" rel="stylesheet" href="css/default.css">
+</head>
+<body>
+<div class="box">
+    <ul class="menu">
+        <li class="level1">
+            <a href="#none">衬衫</a>
+            <ul class="level2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">长袖衬衫</a></li>
+                <li><a href="#none">短袖T恤</a></li>
+                <li><a href="#none">长袖T恤</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">卫衣</a>
+            <ul class="level2">
+                <li><a href="#none">开襟卫衣</a></li>
+                <li><a href="#none">套头卫衣</a></li>
+                <li><a href="#none">运动卫衣</a></li>
+                <li><a href="#none">童装卫衣</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">长裤</a>
+            <ul class="level2">
+                <li><a href="#none">短裤</a></li>
+                <li><a href="#none">休闲裤</a></li>
+                <li><a href="#none">牛仔裤</a></li>
+                <li><a href="#none">卡其裤</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="../../javascript-lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    //等待dom树结构加载完毕
+    $(document).ready(function () {
+        $(".level1 > a").click(function () {
+            $(this).addClass("current")//给当前元素添加current样式
+                    .next().show()//下一个元素显示，class="level2"的ul元素
+                    .parent().siblings().children("a").removeClass("current")//父元素的兄弟元素的子元素<a>移除current样式
+                    .next().hide();//父元素的所有兄弟元素（class="level1"的li元素）的所有子元素<a>的下一个元素（class="level2"的ul元素）隐藏
+            return false;
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <p>dasffffffffff</p>
+</body> <!-- 所有脚本应该放到body标签结束之后！ -->
+<script type="text/javascript" src="../javascript-lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    //在网页中所有DOM结构绘制完毕之后执行，不必等待下载并加载图片等资源
+    $(document).ready(function () {
+        alert("world hello!")
+
+        var f_li =
+            '<li ><a href="javascript:;" title="测试用户菜单"><i class="hfq-shezhi"></i><span>测试用户菜单</span><i class="fa fa-angle-left pull-right"></i></a></li>';
+
+        console.log($(f_li).find('a'));
+        $(f_li).find('a').after('<div>----------</div>');
+        $('p').after('oooo');
+
+        console.log($(f_li));
+    });
+    //上述代码的简写形式
+    $(function () {
+        alert("abbreviate!");
+    })
+</script>
+
+
+</html>

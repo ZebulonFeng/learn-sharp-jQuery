@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<input type="checkbox" id="ckb"/><label for="ckb">我已经阅读了上述协议。</label>
+</body>
+<script type="text/javascript" src="../../javascript-lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $ckb = $("#ckb");//jQuery对象
+        var ckb = $ckb[0];//DOM对象
+        $ckb.click(function () {
+            if (ckb.checked) {//DOM方式判断
+                alert("1.感谢你的支持！请继续操作！");
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        var $ckb = $("#ckb");//jQuery对象
+        $ckb.click(function () {
+            if ($ckb.is(":checked")) {//jQuery方式判断
+                alert("2.感谢你的支持！请继续操作！");
+            }
+        })
+    })
+</script>
+</html>
